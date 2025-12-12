@@ -136,6 +136,13 @@ a[href*="Lab-Results"]>div[class*="bg-gradient-to-br"] {
     opacity: 0.9;
 }
 
+/* 5. Drug Calculator */
+a[href*="Drug-Calculator"]>div[class*="bg-gradient-to-br"] {
+    background: url('../images/drug_bg.png') center/cover no-repeat !important;
+    position: relative;
+    opacity: 0.9;
+}
+
 /* Shared Overlay for all cards */
 a[class*="group"]>div[class*="bg-gradient-to-br"]::before {
     content: '';
