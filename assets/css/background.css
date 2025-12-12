@@ -1,0 +1,157 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body,
+#root {
+    background: transparent !important;
+    background-color: transparent !important;
+    min-height: 100vh;
+}
+
+#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -9999;
+    /* Updated Professional Blue Gradient */
+    background: linear-gradient(135deg, #0F2027 0%, #203A43 50%, #2C5364 100%);
+    pointer-events: none;
+}
+
+/* Ensure content is readable on dark background */
+body {
+    color: #e0f2fe;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #ffffff !important;
+}
+
+p,
+span,
+div {
+    color: inherit;
+}
+
+/* Hard override for Tailwind text colors */
+[class*="text-gray-900"] {
+    color: #f0f9ff !important;
+}
+
+[class*="text-gray-600"],
+[class*="text-gray-500"] {
+    color: #cbd5e1 !important;
+}
+
+/* Glassmorphism for cards */
+.card,
+.container,
+.box,
+article,
+.rounded-xl {
+    background: rgba(255, 255, 255, 0.05) !important;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37) !important;
+}
+
+/* FORCE TRANSPARENCY ON BLOCKING ELEMENTS */
+
+/* 1. Header transparency */
+header {
+    background: rgba(15, 32, 39, 0.85) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    backdrop-filter: blur(10px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* 2. Section transparency (Hero, etc.) */
+section,
+main {
+    background: transparent !important;
+    background-image: none !important;
+}
+
+/* 3. React App Overrides */
+#root>div {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* Hide the specific internal background component */
+#root>div>div[class*="fixed"][class*="-z-10"] {
+    display: none !important;
+}
+
+/* Target specific Tailwind bg classes that might be on the hero section */
+div[class*="bg-gradient-to-br"],
+section[class*="bg-gradient-to-br"] {
+    background: transparent !important;
+}
+
+/* 4. Footer Transparency */
+footer {
+    background: rgba(15, 32, 39, 0.9) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    backdrop-filter: blur(10px) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* IMAGE INJECTION: Specific Project Card Themes */
+
+/* 1. Cardiology */
+a[href*="Cardiology"]>div[class*="bg-gradient-to-br"] {
+    background: url('../images/cardio_bg.png') center/cover no-repeat !important;
+    position: relative;
+    opacity: 0.9;
+}
+
+/* 2. Suture Guide */
+a[href*="Suture"]>div[class*="bg-gradient-to-br"] {
+    background: url('../images/suture_bg.png') center/cover no-repeat !important;
+    position: relative;
+    opacity: 0.9;
+}
+
+/* 3. Vision Test */
+a[href*="Vision"]>div[class*="bg-gradient-to-br"] {
+    background: url('../images/vision_bg.png') center/cover no-repeat !important;
+    position: relative;
+    opacity: 0.9;
+}
+
+/* 4. Lab Results */
+a[href*="Lab-Results"]>div[class*="bg-gradient-to-br"] {
+    background: url('../images/lab_bg.png') center/cover no-repeat !important;
+    position: relative;
+    opacity: 0.9;
+}
+
+/* Shared Overlay for all cards */
+a[class*="group"]>div[class*="bg-gradient-to-br"]::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    /* Overlay to ensure text/icon pop */
+    z-index: 0;
+}
+
+/* Ensure the icon stays on top and glows */
+a[class*="group"]>div[class*="bg-gradient-to-br"]>div {
+    position: relative;
+    z-index: 10;
+    background: rgba(30, 60, 114, 0.8) !important;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.8);
+    /* Enhanced glow effect */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
